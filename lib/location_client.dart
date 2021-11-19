@@ -3,9 +3,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:gps_test/permission_enum.dart';
 import 'package:gps_test/position_model.dart';
 
-///
-///  Classe responsável por abstrair lib de localização
-///
 abstract class LocationClient {
   Future<PositionModel> fetchCurrentPosition();
   Future<GeoLocationPermissionEnum> requestLocationPermission();
