@@ -1,15 +1,14 @@
 # gps_test
 
-A flutter project to test gps localization
+A flutter project to test localization
 
-## Getting Started
+[[_TOC_]]
 
-This project is a starting point for a Flutter application.
+# Running on flutter web
 
-A few resources to get you started if this is your first Flutter project:
+# Running on device
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+# Getting Started
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
