@@ -15,7 +15,7 @@ I used [geolocator](https://pub.dev/packages/geolocator) package to get lat and 
 
 - Android
 
-_Haven't test yet_
+_Haven't tested yet_
 
 ## 📖 Getting Started
 If you want to run this test, just follow the instructions bellow.
