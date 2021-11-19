@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gps_test/location_client.dart';
 import 'package:gps_test/location_service.dart';
 
+import 'location_errors.dart';
+
 void main() async {
   final locationService = LocationServiceImpl(GeoLocationClient());
   final app = MyApp(
@@ -31,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 
   final LocationService locationService;
 
-  MyHomePage({Key? key,required this.locationService}) : super(key: key);
+  const MyHomePage({Key? key,required this.locationService}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -53,12 +55,19 @@ class _MyHomePageState extends State<MyHomePage> {
     try{
       final currentLocation = await widget.locationService.currentPosition;
 
-      _latitude = currentLocation.latitude.toStringAsFixed(2);
-      _longitude = currentLocation.longitude.toStringAsFixed(2);
-      _buttonEnabled = true;
+      error = '';
+      _latitude = currentLocation.latitude.toStringAsFixed(10);
+      _longitude = currentLocation.longitude.toStringAsFixed(10);
+    }on LocationDeniedException{
+      error = "Location denied.";
+    }on LocationDeniedForeverException{
+      error = "Location denied forever.";
+    }on LocationServiceNotAvailableException{
+      error = "Location service is not available.";
     }catch(e){
       error = "Deu ruim";
     }
+    _buttonEnabled = true;
     setState(() {});
   }
 
