@@ -12,7 +12,7 @@ class LocationServiceImpl implements LocationService{
 
   final LocationClient _locationClient;
 
-  static PositionModel? _currentPosition;
+  PositionModel? _currentPosition;
 
   LocationServiceImpl(this._locationClient);
 
